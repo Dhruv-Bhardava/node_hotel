@@ -5,7 +5,13 @@ require('dotenv').config();
 const mongoURL = process.env.MONGODB_URL_LOCAL;
 
 // SET UP THE MONGO DB CONNECTION
-mongoose.connect(mongoURL, {useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true })
+// .then(() => {
+//     console.log("Success");
+// })
+// .catch((err) => {
+//     console.log(`can not connect to database, ${err}`);
+// })
 
 // GET THE DEFAULT CONNECTION
 const db = mongoose.connection;
